@@ -31,7 +31,9 @@
                     <td><b> {{$post->detail}} </b></td>
                     <td><img src="/images/{{ $post->image }}" width="200px" height="150px" alt=""></td>
 
-                    <td>Edit
+                    <td>
+                    <a href="{{route('posts.show',$post->id)}}" class="btn btn-info" method="post">Show </a>
+                    <a href="{{route('posts.edit',$post->id)}}" class="btn btn-info" method="post">Edit </a>
 
                     <form action="{{route('posts.destroy',$post->id)}}" method="post">
                         @csrf
