@@ -1,5 +1,5 @@
 {
     "require-dev": {
-        "laravel/breeze": "^2.2"
+        "laravel/breeze": "^2.3"
     }
 }
