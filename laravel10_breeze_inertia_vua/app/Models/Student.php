@@ -14,7 +14,7 @@ class Student extends Model
         'district',
         'laguages',
         'photo',
-        
+
     ];
 
 

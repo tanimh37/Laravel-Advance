@@ -15,8 +15,8 @@ class StudentController extends Controller
     public function index()
     {
         {
-            $Student = Student::all();
-            return Inertia::render('Students/Create', ['student' => $Student]);
+            $students = Student::all();
+            return Inertia::render('Students/index', ['students' => $students]);
         }
     }
 
@@ -33,7 +33,20 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $student = new Student($request->all());
+        $languages = json_encode($request->languages);
+        $student ['laguages'] = $languages;
+        // return $student;
+        if ($image = $request->file('photo')) {
+            $destinationPath = 'images/';
+            $postImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $postImage);
+            $student['photo'] = "$postImage";
+
+        }
+
+        $student->save();
+        return redirect()->route('students.create');
     }
 
     /**
