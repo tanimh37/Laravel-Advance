@@ -1,5 +1,9 @@
 {
     "require-dev": {
         "laravel/breeze": "^2.3"
+    },
+    "require": {
+        "spatie/laravel-permission": "^6.10",
+        "spatie/laravel-html": "^3.11"
     }
 }
